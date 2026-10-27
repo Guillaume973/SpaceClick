@@ -1,0 +1,29 @@
+﻿<Window x:Class="SpaceClicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SpaceClicker" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="/souris.ico">
+    <StackPanel HorizontalAlignment="Center" Background="{DynamicResource BackgroundBrush}">
+        <TextBlock Style="{DynamicResource TitleText}" Text="SpaceClicker" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="Error_Unity" Style="{DynamicResource ErrorText}" Text="Non valide !" HorizontalAlignment="Center" Visibility="Collapsed"></TextBlock>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Grid>
+                <TextBox x:Name="RegisterSec" Width="62" Margin="5" Padding="5" BorderThickness="1"
+                 BorderBrush="Gray" TextChanged="HideText" />
+                <TextBlock x:Name="EnterSec" Text="Sec..." Margin="8,0,0,0" VerticalAlignment="Center" Foreground="Gray" IsHitTestVisible="False"/>
+            </Grid>
+            <Grid>
+                <TextBox x:Name="RegisterMin" Width="62" Margin="5" Padding="5" BorderThickness="1" BorderBrush="Gray" TextChanged="HideText"/>
+                <TextBlock x:Name="EnterMin" Text="Min..." Margin="8,0,0,0" VerticalAlignment="Center" Foreground="Gray" IsHitTestVisible="False"/>
+            </Grid>
+            <Grid>
+                <TextBox x:Name="RegisterHour" Width="62" Margin="5" Padding="5" BorderThickness="1"
+                 BorderBrush="Gray" TextChanged="HideText" />
+                <TextBlock x:Name="EnterHour" Text="Heures..." Margin="8,0,0,0" VerticalAlignment="Center" Foreground="Gray" IsHitTestVisible="False"/>
+            </Grid>
+        </StackPanel>
+        <TextBlock x:Name="State_Off" Style="{DynamicResource ErrorText}" Text="Désactivé" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="State_On" Style="{DynamicResource SuccessText}" Text="Activé" HorizontalAlignment="Center" Visibility="Collapsed"></TextBlock>
+        <Button Style="{DynamicResource PrimaryButton}" Content="Démarrer" Margin="5" Foreground="White" Click="AutoClickStart"></Button>
+        <Button Style="{DynamicResource SecondaryButton}" Content="Stop" Margin="5" BorderBrush="Black" Foreground="White" Click="StopAutoClick"></Button>
+    </StackPanel>
+</Window>
